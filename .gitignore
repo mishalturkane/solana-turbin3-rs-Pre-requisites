@@ -1,0 +1,7 @@
+/target/
+/dev_wallet.json
+Cargo.lock
+.env
+*.log
+.DS_Store
+/Turbin3-wallet.json
