@@ -18,7 +18,7 @@ use solana_sdk::{
     message::Message,
  };
  use std::str::FromStr;
-  #[allow(dead_code)]
+  #[test]
        fn keygen() {
         let keypair = Keypair::new();
         println!("You've generated a new Solana wallet: {}", keypair.pubkey().to_string());
