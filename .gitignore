@@ -5,4 +5,4 @@ Cargo.lock
 *.log
 .DS_Store
 /Turbin3-wallet.json
-/md
+/.md
