@@ -27,7 +27,6 @@ use solana_sdk::{
         println!("{:?}", keypair.to_bytes());   
     }
     #[allow(dead_code)]
-   
     fn airdrop(){
         const  RPC_URL: &str = "https://api.devnet.solana.com";
         let keypair = read_keypair_file("./dev_wallet.json").expect("Couldn't find wallet file");
@@ -172,6 +171,28 @@ use solana_sdk::{
         println!("Success! Check out your TX here: https://explorer.solana.com/tx/{}/?cluster=devnet", signature);
     }
     
+  
+    #[test]
+fn create_pda() {
+    let program_id = Pubkey::new_unique(); // Program ID
+    let user_wallet = Pubkey::new_unique(); // User Wallet
+
+    // PDA derive karna
+    let (pda, bump_seed) = Pubkey::find_program_address(
+        &[b"vault", user_wallet.as_ref()], // Seed(s)
+        &program_id,                       // Program ID
+    );
+
+    println!("PDA: {}", pda);
+    println!("Bump Seed: {}", bump_seed);
+    println!("proram id:{}",program_id);
+    println!("user walet id:{}",user_wallet);
+}
+#[test]
+fn test(){
+   let token_program_id = 10;
+    print!("{}",token_program_id);
+}
 
 
   
